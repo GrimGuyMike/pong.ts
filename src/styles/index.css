@@ -1,0 +1,11 @@
+body {
+    background-color: peachpuff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #field {
+    width: 160px;
+    height: 90px;
+} */
