@@ -19,6 +19,8 @@ export class Renderer {
 
         this.canvas = canvas;
         this.dimensions = dimensions;
+        this.resizeCanvasElement();
+        window.addEventListener('resize', () => this.resizeCanvasElement());
 
         const ctx = canvas.getContext('2d');
         if(ctx) this.context = ctx;
@@ -29,6 +31,31 @@ export class Renderer {
             main: 'white',
             background: 'black'
         };
+    };
+
+    resizeCanvasElement(): void {
+        const canvasRatio = this.dimensions.w / this.dimensions.h,
+              viewportHeight = window.visualViewport.height,
+              viewPortWidth = window.visualViewport.width,
+              viewportRatio = viewPortWidth / viewportHeight;
+
+        if(viewportRatio < canvasRatio) {
+            const relativeCanvasWidth = viewPortWidth * .9,
+                  canvasHeight = relativeCanvasWidth / canvasRatio;
+
+            this.canvas.setAttribute(
+                'style',
+                `width: ${relativeCanvasWidth}px; height: ${canvasHeight}px;`
+            );
+        } else {
+            const relativeCanvasHeight = viewportHeight * .9,
+                  canvasWidth = relativeCanvasHeight * canvasRatio;
+
+            this.canvas.setAttribute(
+                'style',
+                `width: ${canvasWidth}px; height: ${relativeCanvasHeight}px;`
+            );
+        }
     };
 
     clear(): void {
