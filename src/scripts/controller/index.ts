@@ -11,7 +11,7 @@ export class Controller {
       private readonly paddleVelocity = .5;
       private readonly ballVelocity = 1.04 * .5;
 
-      private readonly entities: Map<string, Entity> = new Map();
+      private readonly entities = new Map<string, Entity>();
       private readonly borders: {
             top: number,
             bottom: number,
