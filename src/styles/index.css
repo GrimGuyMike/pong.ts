@@ -1,11 +1,11 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    background-color: peachpuff;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: steelblue;
 }
-
-/* #field {
-    width: 160px;
-    height: 90px;
-} */
