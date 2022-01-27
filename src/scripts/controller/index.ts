@@ -1,6 +1,6 @@
 import { Ball, Paddle } from "../entities";
 import { Entity } from "../entities/entity";
-import { CanvasDimensions } from "../render";
+import { FieldDimensions } from "../render";
 
 export class Controller {
       private readonly paddleWidth = 30;
@@ -23,7 +23,7 @@ export class Controller {
             cpu: 0
       };
 
-      constructor(fieldDimensions: CanvasDimensions) {
+      constructor(fieldDimensions: FieldDimensions) {
             const leftPaddle = new Paddle({
                         x: this.paddleClearance,
                         w: this.paddleWidth,

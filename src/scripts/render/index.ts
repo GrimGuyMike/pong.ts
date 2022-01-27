@@ -1,16 +1,16 @@
 import { Entity } from "../entities/entity";
 import { drawEntity } from "./utils";
 
-export type CanvasDimensions = { w: number, h: number };
+export type FieldDimensions = { w: number, h: number };
 export type ColorScheme = { main: string, background: string };
 
 export class Renderer {
     public readonly canvas: HTMLCanvasElement;
     private readonly context: CanvasRenderingContext2D;
-    private readonly dimensions: CanvasDimensions;
+    private readonly dimensions: FieldDimensions;
     private readonly color: ColorScheme;
 
-    constructor(dimensions: CanvasDimensions, color?: ColorScheme) {
+    constructor(dimensions: FieldDimensions, color?: ColorScheme) {
         const canvas = document.createElement('canvas');
         canvas.width = dimensions.w;
         canvas.height = dimensions.h;

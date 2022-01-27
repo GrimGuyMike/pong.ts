@@ -1,11 +1,11 @@
 import { Controller } from "../controller";
-import { CanvasDimensions, ColorScheme, Renderer } from "../render";
+import { FieldDimensions, ColorScheme, Renderer } from "../render";
 
 export class Scene {
 	private readonly renderer: Renderer;
 	private readonly controller: Controller;
 
-	constructor(dimensions: CanvasDimensions, color?: ColorScheme) {
+	constructor(dimensions: FieldDimensions, color?: ColorScheme) {
 		this.renderer = new Renderer(dimensions, color);
 		this.controller = new Controller(dimensions);
 	};
